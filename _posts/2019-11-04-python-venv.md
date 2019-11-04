@@ -7,3 +7,4 @@ tags: [pyhthon, django]
 $ python -m venv myvenv  
 myvenv\Scripts\activate  
 (myvenv) ~$ python -m pip install --upgrade pip  
+pip install django  
