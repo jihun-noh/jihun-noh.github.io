@@ -1,8 +1,8 @@
 ---
 layout: post
-title: restframework
+title: django rest framework 시작
 category: Python
-tags: [pyhthon, django, restframework]
+tags: [pyhthon, django, djangorestframework]
 ---
 -> settings.py에서 DRF와 만든 movies앱을 등록해준다.  
 -> 모델 생성  
