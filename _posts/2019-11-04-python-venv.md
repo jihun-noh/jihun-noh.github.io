@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 파이썬 가상환경 만들기
+title: 파이썬 django 시작하기
 category: Python
 tags: [pyhthon, django]
 ---
@@ -8,4 +8,6 @@ tags: [pyhthon, django]
 -> myvenv\Scripts\activate  
 -> (myvenv) ~$ python -m pip install --upgrade pip  
 -> pip install django  
--> django-admin.py startproject mysite .
+-> django-admin.py startproject mysite .  
+-> python manage.py migrate  
+-> python manage.py runserver
