@@ -21,7 +21,7 @@ document.body.appendChild(form);
 form.submit();  
 }  
   
--> ajax
+-> ajax  
 function sendPost(url, data) {  
           $.ajax({  
                 url:url,  
