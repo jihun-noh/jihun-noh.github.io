@@ -4,7 +4,7 @@ title: javascript post 요청
 category: Python
 tags: [pyhthon, django, javascript]
 ---
--> Form 방식  
+Form 방식  
 function sendForm(url, data) {  
 var form = document.createElement('form');  
 form.setAttribute('method', 'post');  
@@ -21,7 +21,7 @@ document.body.appendChild(form);
 form.submit();  
 }  
   
--> ajax  
+ajax  
 function sendPost(url, data) {  
           $.ajax({  
                 url:url,  
