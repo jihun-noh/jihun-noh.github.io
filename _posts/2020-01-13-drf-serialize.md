@@ -1,3 +1,9 @@
+---
+layout: post
+title: django rest-framework serialize
+category: Python
+tags: [pyhthon, django, rest-framework]
+---
 직렬화(Serializer)  
 이제 DRF의 메인 기능인 직렬화를 해보자  
 
