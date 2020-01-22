@@ -62,6 +62,7 @@ Proxy Model
 User model 과 One-To-One 연결
 AbstractBaseUser
 AbstractUser
+
 Proxy Model
 User 모델을 직접 상속하고 class Meta 에서 proxy=True 속성으로 Proxy model임을 설정할 수 있다.
 
@@ -82,6 +83,7 @@ class Person(User):
 이 예시에서 정렬을 first_name으로 했다. do_something() 처럼 메소드를 추가해 새로운 동작을 추가할 수도 있다.
 
 하지만 필드를 바꾸지 못하니 자주 사용하진 않는 방법이다.
+
 
 User model 과 One-To-One 연결
 User 객체가 생성될 때 같이 연결된 사용자 모델이 같이 생성되게 하는 방법이다. 기존 User 모델에 손상주지 않으면서 새 필드들을 추가할 수 있다.
@@ -107,60 +109,6 @@ def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 receiver를 사용하면 이벤트가 발생할 때를 찾을 수 있다. Save 이벤트가 발생할때마다 create_user_profile와 save_user_profile 를 호출해 User가 생성될때 Profile 모델도 생성되도록한다.
 
-템플릿에서 다음과 같이 사용할 수 있다.
-
-<h2></h2>
-<ul>
-  <li>Username: </li>
-  <li>Location: </li>
-  <li>Birth Date: </li>
-</ul>
-view.py에서는 다음과 같이 사용할 수 있다.
-
-def update_profile(request, user_id):
-    user = User.objects.get(pk=user_id)
-    user.profile.bio = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
-    user.save()
-form 만들기
-forms.py
-class UserForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'email')
-
-class ProfileForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ('url', 'location', 'company')
-view.py
-@login_required
-@transaction.atomic
-def update_profile(request):
-    if request.method == 'POST':
-        user_form = UserForm(request.POST, instance=request.user)
-        profile_form = ProfileForm(request.POST, instance=request.user.profile)
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
-            messages.success(request, _('Your profile was successfully updated!'))
-            return redirect('settings:profile')
-        else:
-            messages.error(request, _('Please correct the error below.'))
-    else:
-        user_form = UserForm(instance=request.user)
-        profile_form = ProfileForm(instance=request.user.profile)
-    return render(request, 'profiles/profile.html', {
-        'user_form': user_form,
-        'profile_form': profile_form
-    })
-profile.html
-
-<form method="post">
-  {% csrf_token %}
-  {{ user_form.as_p }}
-  {{ profile_form.as_p }}
-  <button type="submit">Save changes</button>
-</form>
 
 AbstractBaseUser
 완전히 새로운 User 모델을 상속받아 새로 정의한다. 데이터 스키마에 영향을 많이 주기 때문에 주의하며 사용해야한다. 기존 필드뿐만 아니라 동작까지 다 구현한다.
@@ -211,6 +159,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         Sends an email to this User.
         '''
         send_mail(subject, message, from_email, [self.email], **kwargs)
+        
 User 모델을 관리하는 Manager도 정의해야한다.
 
 from django.contrib.auth.base_user import BaseUserManager
@@ -263,6 +212,8 @@ class Course(models.Model):
     slug = models.SlugField(max_length=100)
     name = models.CharField(max_length=100)
     tutor = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    
 AbstractUser
 User에서 동작은 그대로 하고 필드만 재정의할 때 사용한다.
 
