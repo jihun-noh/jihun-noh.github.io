@@ -279,7 +279,7 @@ AUTH_USER_MODEL = 'core.User'
 
 결론
 
-proxy model : Django User가 제공하는 모든 것에 만족하며 추가 정보를 저장할 필요가 없습니다.
-One to One : Django가 인증을 처리하는 방식에 만족하며 인증되지 않은 일부 관련 속성을 사용자에게 추가해야합니다.
-AbstractBaseUser : Django가 인증을 처리하는 방식이 프로젝트에 맞지 않습니다.
-AbstractUser : Django가 인증을 처리하는 방법은 프로젝트에 완벽하게 맞지만 별도의 모델을 만들지 않고도 추가 속성을 추가하려고합니다.
+proxy model : Django User가 제공하는 모든 것에 만족하며 추가 정보를 저장할 필요가 없습니다.  
+One to One : Django가 인증을 처리하는 방식에 만족하며 인증되지 않은 일부 관련 속성을 사용자에게 추가해야합니다.  
+AbstractBaseUser : Django가 인증을 처리하는 방식이 프로젝트에 맞지 않습니다.  
+AbstractUser : Django가 인증을 처리하는 방법은 프로젝트에 완벽하게 맞지만 별도의 모델을 만들지 않고도 추가 속성을 추가하려고합니다.  
