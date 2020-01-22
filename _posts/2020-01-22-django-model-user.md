@@ -1,3 +1,9 @@
+---
+layout: post
+title: django user model
+category: Python
+tags: [pyhthon, django]
+---
 
 User model의 기본적으로 있는 여러 필드들이 있다.
 
