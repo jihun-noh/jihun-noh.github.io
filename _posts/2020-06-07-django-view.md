@@ -12,8 +12,7 @@ def dive_point(request):
     if request.method == 'GET':   
         queryset = DivePoint.objects.all()   
         serializer = DivePointSerializer(queryset, many=True)   
-        return Response(serializer.data)   
-   
+        return Response(serializer.data)      
 path('fbv/', views.dive_point)
 
 
