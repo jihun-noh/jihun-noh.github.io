@@ -14,7 +14,7 @@ def dive_point(request):
         serializer = DivePointSerializer(queryset, many=True)
         return Response(serializer.data)
 
-path('fbvget/', views.dive_point)
+path('fbv/', views.dive_point)
 
 
 2. Class Based View
