@@ -39,4 +39,7 @@ class DivePointViewSet(viewsets.ModelViewSet):
        })   
     
    router = routers.DefaultRouter()   
-   router.register(r'divepoints', views.DivePointViewSet)
+   router.register(r'divepoints', views.DivePointViewSet)   
+   urlpatterns = [   
+       path('', include(router.urls)),
+       path('get/', views.point_list),
