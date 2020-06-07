@@ -33,10 +33,10 @@ class DivePointViewSet(viewsets.ModelViewSet):
     serializer_class = DivePointSerializer   
     queryset = DivePoint.objects.all()   
    
-point_list = DivePointViewSet.as_view({   
-    'get': 'list',   
-    'post': 'create',   
-    })   
+   point_list = DivePointViewSet.as_view({   
+       'get': 'list',   
+       'post': 'create',   
+       })   
     
    router = routers.DefaultRouter()   
    router.register(r'divepoints', views.DivePointViewSet)
