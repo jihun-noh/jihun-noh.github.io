@@ -5,15 +5,15 @@ category: Python
 tags: [pyhthon, django]
 ---
 
-1. Function based View
-from rest_framework.decorators import api_view
-@api_view(['GET'])
-def dive_point(request):
-    if request.method == 'GET':
-        queryset = DivePoint.objects.all()
-        serializer = DivePointSerializer(queryset, many=True)
-        return Response(serializer.data)
-
+1. Function based View   
+from rest_framework.decorators import api_view   
+@api_view(['GET'])   
+def dive_point(request):   
+    if request.method == 'GET':   
+        queryset = DivePoint.objects.all()   
+        serializer = DivePointSerializer(queryset, many=True)   
+        return Response(serializer.data)   
+   
 path('fbv/', views.dive_point)
 
 
