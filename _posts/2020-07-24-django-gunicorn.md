@@ -19,7 +19,7 @@ LOG_FILE=/logs/mybuddy/`date "+%Y-%m-%d"`.logs
 echo "Starting $NAME"  
 
 exec gunicorn ${DJANGO_WSGI_MODULE}:application \  
-  --bind=unix:0.0.0.0:8000 \  
+  --bind=0.0.0.0:8000 \  
   --name $NAME \  
   --workers $NUM_WORKERS \  
   --user=$USER \  
