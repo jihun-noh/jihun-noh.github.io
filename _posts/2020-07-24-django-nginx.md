@@ -9,9 +9,9 @@ tags: [pyhthon, django, nginx]
 -> /etc/nginx/conf.d  
 ->  server {
         listen       80;
-        server_name  mybuddy.com;
+        server_name  ip;
         location / {
-                proxy_pass http://0.0.0:8000;
+                proxy_pass http://127.0.0.1:8000;
         }
 
         error_page 404 /404.html;
