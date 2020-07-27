@@ -13,7 +13,10 @@ tags: [pyhthon, django, nginx]
         location / {  
                 proxy_pass http://127.0.0.1:8000;  
         }  
-  
+        location /static {  
+                autoindex on;  
+                alias /project/mybuddy/mybuddyvenv/bin/myBuddy/staticfiles/;  
+        }  
         error_page 404 /404.html;  
             location = /40x.html {  
         }  
