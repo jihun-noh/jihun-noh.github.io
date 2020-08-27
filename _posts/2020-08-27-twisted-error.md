@@ -5,4 +5,4 @@ category: Python
 tags: [pyhthon]
 ---
 # error: command 'gcc' failed with exit status 1 에러 발생
--> python-devel 패키지 설치
+-> 버전에 맞는 python-devel 패키지 설치 (예: yum install python38-devel)
