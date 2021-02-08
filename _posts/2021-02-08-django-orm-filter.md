@@ -4,12 +4,11 @@ title: Django ORM Filter
 category: Python
 tags: [pyhthon, django]
 ---
-SELECT
-ALL
-SQL
-SELECT * FROM web_article;
-ORM
-Article.objects.all()
+SELECT ALL
+SQL  
+SELECT * FROM web_article;  
+ORM  
+Article.objects.all()  
 
 WHERE
 SQL
