@@ -4,29 +4,29 @@ title: Django ORM Filter
 category: Python
 tags: [pyhthon, django]
 ---
-SELECT ALL
+SELECT ALL  
 SQL  
 SELECT * FROM web_article;  
 ORM  
 Article.objects.all()  
 
-WHERE
-SQL
-SELECT * FROM web_article WHERE id=1;
-ORM
-Article.objects.filter(id=1)
+WHERE  
+SQL  
+SELECT * FROM web_article WHERE id=1;  
+ORM  
+Article.objects.filter(id=1)  
 
-LIMIT n
-SQL
-SELECT * FROM web_article LIMIT 10;
-ORM
-Article.objects.all()[:10]
+LIMIT n  
+SQL  
+SELECT * FROM web_article LIMIT 10;  
+ORM  
+Article.objects.all()[:10]  
 
-LIMIT n,n
-SQL
-SELECT * FROM web_article LIMIT 5,5;
-ORM
-Article.objects.all()[5:10]
+LIMIT n,n  
+SQL  
+SELECT * FROM web_article LIMIT 5,5;  
+ORM  
+Article.objects.all()[5:10]  
 
 fetchone
 SQL
